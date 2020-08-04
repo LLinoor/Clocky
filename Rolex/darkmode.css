@@ -10,7 +10,7 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #091921;
+    background: #272b28;
 }
 .clock
 {
@@ -21,7 +21,7 @@ body
     align-items: center;
     background: url(rolex.png);
     background-size: cover;
-    border: 4px solid #091921;
+    border: 4px solid #272b28;
     box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
                 inset 0 -15px 15px rgba(255,255,255,0.05),
                 0 15px 15px rgba(0,0,0,0.3),
@@ -129,7 +129,7 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #091921;
+    background: #272b28;
 }
 .clock
 {

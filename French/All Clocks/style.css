@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+}
+h1, p{
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 40px;
+}
+.ms, .rolex {
+    width: 200px;
+    height: 200px;
+}
+.num{
+    width: 200px;
+    height: 60px;
+}

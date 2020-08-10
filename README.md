@@ -2,6 +2,8 @@
 Just a clock.
 Coded in HTML/CSS/Javascript.
 
+![Stats](https://pagespeed-insights.herokuapp.com/?url=https://clock-y.firebaseapp.com/)
+
 ## IMPORTANT :
 
 1. The basic dial is based on the following video: https://www.youtube.com/watch?v=weZFfrjF-k4&t (big thanks to him ! :))

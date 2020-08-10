@@ -2,7 +2,7 @@
 Just a clock.
 Coded in HTML/CSS/Javascript.
 
-![Stats](https://pagespeed-insights.herokuapp.com/?url=https://clock-y.firebaseapp.com/)
+![Stats](https://clock-y.firebaseapp.com/resources/stats.svg)
 
 ## IMPORTANT :
 

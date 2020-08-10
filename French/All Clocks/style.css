@@ -1,8 +1,8 @@
 body{
     text-align: center;
-}
-h1, p{
     font-family: 'Roboto', sans-serif;
+}
+h1{
     margin-bottom: 40px;
 }
 .ms, .rolex {

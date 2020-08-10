@@ -1,31 +1,33 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html lang="en">
 <html>
    <head>
-    <title>Clocky</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <a href="darkmode.html" class=dark>Switch to Dark Mode</a>
-    <a href="../All Clocks/index.html" class=link>Settings</a>
-      <script type="text/javascript"> 
-         function refresh(){
-             var t = 1000; // rafraîchissement en millisecondes
-             setTimeout('showDate()',t)
-         }
-         
-         function showDate() {
-             var date = new Date()
-             var h = date.getHours();
-             var m = date.getMinutes();
-             var s = date.getSeconds();
-             if( h < 10 ){ h = '0' + h; }
-             if( m < 10 ){ m = '0' + m; }
-             if( s < 10 ){ s = '0' + s; }
-             var time = h + ':' + m + ':' + s
-             document.getElementById('horloge').innerHTML = time;
-             refresh();
-          }
-      </script>
-      <p>(The time corresponds to the time on your terminal, depending on your terminal the time can be changed.)</p>
+      <link rel="icon" type="image/x-icon" href="../resources/logo.ico"/>
+      <title>Clocky</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+      <a href="darkmode.html" class=dark>Switch to Dark Mode</a>
+      <a href="../All Clocks/index.html" class=link>Settings</a>
+         <script type="text/javascript"> 
+            function refresh(){
+               var t = 1000; // rafraîchissement en millisecondes
+               setTimeout('showDate()',t)
+            }
+            
+            function showDate() {
+               var date = new Date()
+               var h = date.getHours();
+               var m = date.getMinutes();
+               var s = date.getSeconds();
+               if( h < 10 ){ h = '0' + h; }
+               if( m < 10 ){ m = '0' + m; }
+               if( s < 10 ){ s = '0' + s; }
+               var time = h + ':' + m + ':' + s
+               document.getElementById('horloge').innerHTML = time;
+               refresh();
+            }
+         </script>
+         <p>(The time corresponds to the time on your terminal, depending on your terminal the time can be changed.)</p>
    </head>
    <body onload=showDate();>
       <span id='horloge'></span>

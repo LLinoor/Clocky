@@ -1,31 +1,33 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html lang="fr">
 <html>
    <head>
-   <meta charset="UTF-8">
-    <title>Clocky</title>
-    <link rel="stylesheet" href="darkmode.css">
-    <a href="index.html" class=dark>Passer en mode clair</a>
-    <a href="../All Clocks/index.html" class=link>Paramètres</a>
-      <script type="text/javascript"> 
-         function refresh(){
-             var t = 1000; // rafraîchissement en millisecondes
-             setTimeout('showDate()',t)
-         }
-         
-         function showDate() {
-             var date = new Date()
-             var h = date.getHours();
-             var m = date.getMinutes();
-             var s = date.getSeconds();
-             if( h < 10 ){ h = '0' + h; }
-             if( m < 10 ){ m = '0' + m; }
-             if( s < 10 ){ s = '0' + s; }
-             var time = h + ':' + m + ':' + s
-             document.getElementById('horloge').innerHTML = time;
-             refresh();
-          }
-      </script>
-      <p>(L'heure correspond à celle de votre terminal, selon celui-ci l'heure peut être déréglée.)</p>
+      <link rel="icon" type="image/x-icon" href="../../resources/logo.ico"/>
+      <meta charset="UTF-8">
+      <title>Clocky</title>
+      <link rel="stylesheet" href="darkmode.css">
+      <a href="index.html" class=dark>Passer en mode clair</a>
+      <a href="../All Clocks/index.html" class=link>Paramètres</a>
+         <script type="text/javascript"> 
+            function refresh(){
+               var t = 1000; // rafraîchissement en millisecondes
+               setTimeout('showDate()',t)
+            }
+            
+            function showDate() {
+               var date = new Date()
+               var h = date.getHours();
+               var m = date.getMinutes();
+               var s = date.getSeconds();
+               if( h < 10 ){ h = '0' + h; }
+               if( m < 10 ){ m = '0' + m; }
+               if( s < 10 ){ s = '0' + s; }
+               var time = h + ':' + m + ':' + s
+               document.getElementById('horloge').innerHTML = time;
+               refresh();
+            }
+         </script>
+         <p>(L'heure correspond à celle de votre terminal, selon celui-ci l'heure peut être déréglée.)</p>
    </head>
    <body onload=showDate();>
       <span id='horloge'></span>

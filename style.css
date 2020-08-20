@@ -19,7 +19,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(clock.png);
+    background: url(resources/design-clock.png);
     background-size: cover;
 }
 .clock::before
@@ -97,134 +97,6 @@ color: black;
 font-family: 'Roboto', sans-serif;
 position: absolute;
 top: 30px;
-right: 50px;
-}
-
-.dark
-{
-text-decoration: none;
-color: black;
-font-family: 'Roboto', sans-serif;
-position: absolute;
-top: 30px;
-left: 50px;
-}
-
-@media (max-width: 1000px) {
-
-    *
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: white;
-}
-.clock
-{
-    width: 650px;
-    height: 650px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url(clock.png);
-    background-size: cover;
-}
-.clock::before
-{
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: #fff;
-    border-radius: 50%;
-    z-index: 10000;
-}
-.clock .hour,
-.clock .min,
-.clock .sec
-{
-    position: absolute;
-}
-.clock .hour .hr
-{
-   width: 320px;
-   height: 320px; 
-}
-.clock .min .mn
-{
-   width: 380px;
-   height: 380px; 
-}
-.clock .sec .sc
-{
-   width: 450px;
-   height: 450px; 
-}
-.hr, .mn, .sc
-{
-    display: flex;
-    justify-content: center;
-    /*align-items: center;*/
-    border-radius: 50%;
-}
-.hr::before
-{
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 175px;
-    background: #ff105e;
-    z-index: 10;
-    border-radius: 6px 6px 0 0;
-}
-.mn::before
-{
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 190px;
-    background: black;
-    z-index: 11;
-    border-radius: 6px 6px 0 0;
-}
-.sc::before
-{
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 250px;
-    background: black;
-    z-index: 12;
-    border-radius: 6px 6px 0 0;
-}
-.link
-{
-font-size: 30px;
-text-decoration: none;
-color: black;
-font-family: 'Roboto', sans-serif;
-position: absolute;
-top: 30px;
-right: 50px;
-}
-
-.dark
-{
-font-size: 30px;
-text-decoration: none;
-color: black;
-font-family: 'Roboto', sans-serif;
-position: absolute;
-top: 30px;
-left: 50px;
-}
 }
 p
 {
@@ -233,4 +105,32 @@ p
     bottom: 15px;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (prefers-color-scheme: dark){
+body
+{
+    background: #272b28;
+}
+.clock
+{
+    background: url(resources/design-clock-dark-mode.png);
+}
+.mn::before
+{
+    background: white;
+}
+.sc::before
+{
+    background: white;
+}
+.link
+{
+    color: #fff;
+}
+p
+{
+    color: white;
+}
 }

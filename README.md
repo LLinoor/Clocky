@@ -6,7 +6,7 @@ Coded in HTML/CSS/Javascript.
 
 ## IMPORTANT :
 
-1. The basic dial is based on the following video: <a href="https://www.youtube.com/watch?v=weZFfrjF-k4&t" target="_blank">https://www.youtube.com/watch?v=weZFfrjF-k4&t</a> (big thanks to him ! :))
+1. The basic dial is based on the following video: https://www.youtube.com/watch?v=weZFfrjF-k4&t (big thanks to him ! :))
 
 2. I DON'T KNOW IF THE IMAGES (DIALS) ARE LICENSED!
 
@@ -19,8 +19,8 @@ If you use Firefox you can install the extension directly from the store, here i
 ### Chrome and others :
 If you have a version of Chrome or other, you can try to install the extension with the files included in the repo (tried on Edge Beta (Chrome, 86.0.622.11) and on Chrome (official, 85.0.4183.102)) :
 
-Go to the extension page of your browser (<a href="chrome://extensions" target="_blank">chrome://extensions</a>, for most browsers running on Chromium), activate the developer mode. To install the extension download the repo (or clone it), and drag the "Extension" folder in your browser to the extensions page .
+Go to the extension page of your browser (chrome://extensions, for most browsers running on Chromium), activate the developer mode. To install the extension download the repo (or clone it), and drag the "Extension" folder in your browser to the extensions page .
 
 ## URL :
 
-The site is hosted on Google Firebase : <a href="https://clock-y.firebaseapp.com/index.html" target="_blank">https://clock-y.firebaseapp.com/index.html</a>
+The site is hosted on Google Firebase : https://clock-y.firebaseapp.com/index.html

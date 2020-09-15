@@ -29,6 +29,16 @@ body
     position: absolute;
     top: 30px;
 }
+.announcement{
+    margin-bottom: 40px;
+}
+.extension{
+    color: black;
+}
+.new{
+    color: #fc9803;
+    font-size: large;
+}
 @media (prefers-color-scheme: dark){
 span
 {
@@ -46,4 +56,20 @@ body
 {
     color: white;
 }
+.extension{
+    color: white;
 }
+}
+@media (max-width: 500px){
+    p{
+        visibility: hidden;
+    }
+    }
+    @media (max-width: 750px){
+        .info{
+            visibility: hidden;
+        }
+        .announcement{
+            margin-bottom: 0px;
+        }
+    }

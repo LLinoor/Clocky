@@ -90,24 +90,6 @@ body
     z-index: 12;
     border-radius: 6px 6px 0 0;
 }
-.link
-{
-text-decoration: none;
-color: black;
-font-family: 'Roboto', sans-serif;
-position: absolute;
-top: 30px;
-}
-p
-{
-    position: absolute;
-    color: black;
-    bottom: 15px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
 @media (prefers-color-scheme: dark){
 body
 {
@@ -124,13 +106,5 @@ body
 .sc::before
 {
     background: white;
-}
-.link
-{
-    color: #fff;
-}
-p
-{
-    color: white;
 }
 }

@@ -21,6 +21,9 @@ If you have a version of Chrome or other, you can try to install the extension w
 
 Go to the extension page of your browser (chrome://extensions, for most browsers running on Chromium), activate the developer mode. To install the extension download the repo (or clone it), and drag the "Extension" folder in your browser to the extensions page .
 
+### Old versions :
+All versions of the extension are available on the release page or on the official Firefox extension page (https://addons.mozilla.org/fr/firefox/addon/clocky/versions/).
+
 ## URL :
 
 The site is hosted on Google Firebase : https://clock-y.firebaseapp.com/index.html

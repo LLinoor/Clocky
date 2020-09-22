@@ -2,15 +2,20 @@ var Stopwatch = function(elem, options){
 
   var timer = document.getElementById("timer");
 
+  var started = false
+  var buttonLabel = document.getElementById("buttonLabel");
+
   var startButton = document.getElementById("startbutton");
   startButton.addEventListener("click", function(event) {
-    start();
-    event.preventDefault();
-  });
-
-  var stopButton = document.getElementById("stopbutton");
-  stopButton.addEventListener("click", function(event) {
-    stop();
+    if (started == false) {
+      started = true
+      start()
+      buttonLabel.textContent = "Stop"
+    } else {
+      started = false
+      stop()
+      buttonLabel.textContent = "Start"
+    }
     event.preventDefault();
   });
 

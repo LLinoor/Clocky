@@ -2,18 +2,23 @@ var Stopwatch = function(elem, options){
 
   var timer = document.getElementById("timer");
 
+  var started = false
+  var buttonLabel = document.getElementById("buttonLabel");
+
   var startButton = document.getElementById("startbutton");
   startButton.addEventListener("click", function(event) {
-    start();
+    if (started == false) {
+      started = true
+      start()
+      buttonLabel.textContent = "Stop"
+    } else {
+      started = false
+      stop()
+      buttonLabel.textContent = "Start"
+    }
     event.preventDefault();
   });
-
-  var stopButton = document.getElementById("stopbutton");
-  stopButton.addEventListener("click", function(event) {
-    stop();
-    event.preventDefault();
-  });
-
+  
   var resetButton = document.getElementById("resetbutton");
   resetButton.addEventListener("click", function(event) {
     reset();

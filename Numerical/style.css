@@ -4,15 +4,6 @@ span
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
 }
-p
-{
-    position: absolute;
-    color: black;
-    bottom: 5px;
-    font-family: 'Roboto', sans-serif;
-    padding-left: 15px;
-    padding-right: 15px;
-}
 body
 {
     display: flex;
@@ -20,48 +11,62 @@ body
     align-items: center;
     min-height: 100vh;
     background: white;
-}
-.link
-{
-    text-decoration: none;
-    color: black;
-    font-family: 'Roboto', sans-serif;
-    position: absolute;
-    top: 30px;
+    margin: 0;
+    padding: 0;
 }
 .announcement{
-    margin-bottom: 40px;
-}
-.extension{
-    color: black;
+    margin-bottom: 30px;
 }
 .new{
     color: #fc9803;
     font-size: large;
+}
+.announcement{
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.info{
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+header{
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 15px;
+}
+a{
+    text-decoration: none;
 }
 @media (prefers-color-scheme: dark){
 span
 {
     color: white;
 }
-p
-{
-    color: #fff;
-}
 body
 {
     background: #272b28;
 }
-.link
+p
 {
     color: white;
 }
-.extension{
+a{
     color: white;
 }
 }
 @media (max-width: 500px){
-    p{
+    .announcement{
         visibility: hidden;
     }
     }

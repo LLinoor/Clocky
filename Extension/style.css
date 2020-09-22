@@ -9,11 +9,13 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     min-height: 100vh;
     background: white;
 }
 .clock
 {
+    margin-top: 5%;
     width: 350px;
     height: 350px;
     display: flex;
@@ -90,6 +92,20 @@ body
     z-index: 12;
     border-radius: 6px 6px 0 0;
 }
+p{
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 5%;
+    left: 41%
+}
+a{
+    color: black;
+}
+@-moz-document url-prefix() {
+    p {
+        font-size: small;
+    }
+}
 @media (prefers-color-scheme: dark){
 body
 {
@@ -106,5 +122,8 @@ body
 .sc::before
 {
     background: white;
+}
+a{
+    color: white;
 }
 }

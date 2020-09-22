@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="resources/logo.ico"/>
     <meta property="og:title" content="Clocky">
-    <meta property="og:image" content="resources/short.png">
+    <meta property="og:image" content="https://clock-y.web.app/resources/short.png">
     <meta property="og:description" content="Just a clock.">
     <meta property="og:url" content="https://clock-y.web.app/">
 </head>
 <body>
-    <a href="All Clocks/index.html" class=link>Settings</a>
+    <header>
+        <p class="header"><a href="All Clocks/index.html" class=link>Settings</a> - <a href="Stopwatch/index.html">Stopwatch</a></p>
+    </header>
     <div class="clock">
         <div class="hour">
             <div class="hr" id="hr"></div>
@@ -40,8 +42,6 @@
     mn.style.transform = `rotateZ(${mm}deg)`;
     sc.style.transform = `rotateZ(${ss}deg)`;
         })
-
-    
     </script>
         <p class="announcement"><span class="new">NEW!</span> Add the Clocky extension to your browser : <a class="extension" href="https://addons.mozilla.org/firefox/addon/clocky/" target="_blank">Firefox</a> or <a class="extension" href="https://github.com/LLinoor/Clocky#extension-" target="_blank">others</a></p>
         <p class="info">(The time corresponds to the time on your terminal, depending on your terminal the time can be changed.)</p>

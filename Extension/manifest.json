@@ -2,9 +2,10 @@
   "manifest_version": 2,  
   "name": "Clocky",  
   "description": "Extension for clocky.web.app",  
-  "version": "1.0.1",  
+  "version": "1.1",  
   "browser_action": {   
    "default_popup": "index.html",
    "default_icon": "icon.png"
-  }
+  },
+  "content_security_policy": "script-src 'self' https://unpkg.com/material-components-web@latest/dist/; object-src 'self'"
  }  

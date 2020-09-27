@@ -6,6 +6,5 @@
   "browser_action": {   
    "default_popup": "index.html",
    "default_icon": "icon.png"
-  },
-  "content_security_policy": "script-src 'self' https://unpkg.com/material-components-web@latest/dist/; object-src 'self'"
+  }
  }  

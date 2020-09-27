@@ -29,6 +29,11 @@ header{
 #timer{
     font-size: xx-large;
 }
+#danger{
+    position: absolute;
+    bottom: 25%;
+    visibility: hidden;
+}
 @media (prefers-color-scheme: dark){
     body{
         background: #272b28;

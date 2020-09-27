@@ -4,6 +4,7 @@ var Stopwatch = function(elem, options){
 
   var started = false
   var buttonLabel = document.getElementById("buttonLabel");
+  var danger = document.getElementById("danger");
 
   var startButton = document.getElementById("startbutton");
   startButton.addEventListener("click", function(event) {
@@ -11,10 +12,12 @@ var Stopwatch = function(elem, options){
       started = true
       start()
       buttonLabel.textContent = "Stop"
+      danger.style.visibility = "visible"
     } else {
       started = false
       stop()
       buttonLabel.textContent = "Start"
+      danger.style.visibility = "hidden"
     }
     event.preventDefault();
   });

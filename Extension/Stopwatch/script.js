@@ -59,7 +59,38 @@ var Stopwatch = function(elem, options){
   }
 
   function render() {
-    timer.innerHTML = clock/1000;
+    time = clock/1000
+    if(time < 60){
+      function rounder(x) {
+        return Number.parseFloat(x).toFixed(2);
+      }
+      timer.innerHTML = rounder(time)
+    }
+    else if(time > 60 && time < 3600){
+      var minutes = Math.floor(time / 60);
+      var seconds = time - minutes * 60;
+      var seconds = Math.round(seconds);
+      var formattedMinutes = ("0" + minutes).slice(-2);
+      var formattedSeconds = ("0" + seconds).slice(-2);
+      timer.innerHTML = `${formattedMinutes}:${formattedSeconds}`
+    }
+    else if(time > 3600){  
+      // source : https://stackoverflow.com/a/11486026 (thx to him)
+          var hrs = ~~(time / 3600);
+          var mins = ~~((time % 3600) / 60);
+          var secs = ~~time % 60;
+      
+          var ret = "";
+      
+          if (hrs > 0) {
+              ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+          }
+      
+          ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+          ret += "" + secs;
+          timer.innerHTML = ret
+      
+    }
   }
 
   function delta() {

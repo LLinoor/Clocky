@@ -19,7 +19,7 @@ If you use Firefox you can install the extension directly from the store, here i
 ### Chrome and others :
 If you have a version of Chrome or other, you can try to install the extension with the files included in the repo (tried on Edge Beta (Chrome, 86.0.622.11) and on Chrome (official, 85.0.4183.102)) :
 
-Go to the extension page of your browser (chrome://extensions, for most browsers running on Chromium), activate the developer mode. To install the extension download the [extension from release page](https://github.com/LLinoor/Clocky/release) and drag the .zip in your browser to the extensions page .
+Go to the extension page of your browser (chrome://extensions, for most browsers running on Chromium), activate the developer mode. To install the extension download the [extension from releases page](https://github.com/LLinoor/Clocky/releases) and drag the .zip in your browser to the extensions page .
 
 ### Old versions :
 All versions of the extension are available on the release page or on the official Firefox extension page (https://addons.mozilla.org/fr/firefox/addon/clocky/versions/).

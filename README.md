@@ -16,8 +16,11 @@ I quickly created a site extension for Chrome/Firefox, here is how to install it
 ### Firefox : 
 If you use Firefox you can install the extension directly from the store, here is the link : https://addons.mozilla.org/firefox/addon/clocky
 
+### Edge :
+If you use Edge you can install the extension directly from the store, here is the link : https://microsoftedge.microsoft.com/addons/detail/clocky/jpldliajgiihpgiegaeimmhhhjkfeako
+
 ### Chrome and others :
-If you have a version of Chrome or other, you can try to install the extension with the files included in the repo (tried on Edge Beta (Chrome, 86.0.622.11) and on Chrome (official, 85.0.4183.102)) :
+If you have a version of Chrome or other, you can try to install the extension with the files included in the repo (tried on Edge Beta (Chrome, 86.0.622.11) and on Chrome (official (stable), 85.0.4183.102)) :
 
 Go to the extension page of your browser (chrome://extensions, for most browsers running on Chromium), activate the developer mode. To install the extension download the [extension from releases page](https://github.com/LLinoor/Clocky/releases) and drag the .zip in your browser to the extensions page .
 

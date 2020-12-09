@@ -1,4 +1,4 @@
-# Clocky (in development)
+# Clocky
 Just a clock.
 Coded in HTML/CSS/Javascript.
 

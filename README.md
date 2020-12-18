@@ -1,4 +1,4 @@
-# Clocky (in development)
+# Clocky
 Just a clock.
 Coded in HTML/CSS/Javascript.
 
@@ -29,4 +29,4 @@ All versions of the extension are available on the release page or on the offici
 
 ## URL :
 
-The site is hosted on Google Firebase : https://clock-y.firebaseapp.com/index.html
+The site is hosted on Google Firebase : https://clocky.ga

@@ -6,13 +6,13 @@ h1{
     margin-bottom: 40px;
 }
 .ms{
-    content:url("../resources/All\ Clocks/clock.png");
+    content:url("../resources/Settings/clock.png");
 }
 .rolex {
-    content:url("../resources/All\ Clocks/rolex.png");
+    content:url("../resources/Settings/rolex.png");
 }
 .num {
-    content:url("../resources/All\ Clocks/numerical.png");
+    content:url("../resources/Settings/numerical.png");
 }
 @media (prefers-color-scheme: dark){
     body{
@@ -23,13 +23,13 @@ h1{
         margin-bottom: 40px;
     }
     .ms{
-        content:url("../resources/All\ Clocks/clock-dark-mode.png");
+        content:url("../resources/Settings/clock-dark-mode.png");
     }
     .rolex {
-        content:url("../resources/All\ Clocks/rolex.png");
+        content:url("../resources/Settings/rolex.png");
     }
     .num {
-        content:url("../resources/All\ Clocks/numerical-dark-mode.png");
+        content:url("../resources/Settings/numerical-dark-mode.png");
     }
     p, a{
         color: white;

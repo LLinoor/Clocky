@@ -3,36 +3,27 @@
 <html>
    <head>
       <meta name="viewport" content="width=device-width">
-      <link rel="icon" type="image/x-icon" href="../resources/logo.ico"/>
+      <!-- <link rel="icon" type="image/x-icon" href="../resources/logo.ico"/> -->
       <title>Clocky - Numerical</title>
       <meta charset="UTF-8">
       <link rel="stylesheet" href="style.css">
-         <script type="text/javascript"> 
-            function refresh(){
-               var t = 1000;
-               setTimeout('showDate()',t)
-            }
-            
-            function showDate() {
-               var date = new Date()
-               var h = date.getHours();
-               var m = date.getMinutes();
-               var s = date.getSeconds();
-               if( h < 10 ){ h = '0' + h; }
-               if( m < 10 ){ m = '0' + m; }
-               if( s < 10 ){ s = '0' + s; }
-               var time = h + ':' + m + ':' + s
-               document.getElementById('horloge').innerHTML = time;
-               refresh();
-            }
-         </script>
    </head>
       <body onload=showDate();>
          <header>
             <p class="header"><a href="../Settings/index.html" class=link rel="noreferrer">Settings</a> - <a href="../Stopwatch/index.html" rel="noreferrer">Stopwatch</a></p>
          </header>
+         <select name="timezones" id="timezones" onchange=loadCountries();>
+            <option value="">Change timezone</option>
+            <option value="Africa">Africa</option>
+            <option value="America">America</option>
+            <option value="Asia">Asia</option>
+            <option value="Australia">Australia</option>
+            <option value="Europe">Europe</option>
+            <option value="India">India</option>
+            <option value="Pacific">Pacific</option>
+        </select>
          <span id='horloge'></span>
-         <p class="info">(The time corresponds to the time on your terminal, depending on your terminal the time can be changed.)</p>
+         <p id="info" class="info">Waiting for a satellite connection...</p>
       </body>
-      <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3e10dda619124ea7ae02a4d79ee01350"}'></script><!-- End Cloudflare Web Analytics -->
+      <script src="script.js"></script>
 </html>

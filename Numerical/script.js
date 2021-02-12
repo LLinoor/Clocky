@@ -1,5 +1,16 @@
+var currentZone = window.location.search.substr(1)
+url =
+console.log(currentZone)
+
 const Http = new XMLHttpRequest()
-const url = "http://worldtimeapi.org/api/ip.json"
+if (currentZone == ""){
+    url = "http://worldtimeapi.org/api/ip.json"
+    console.log("ok")
+}
+else {
+    url = "http://worldtimeapi.org/api/timezone/" + currentZone
+    console.log(url)
+}
 Http.open("GET", url)
 Http.send()
 
@@ -19,7 +30,8 @@ Http.onreadystatechange=function(){
 }
 
 counter = 0
-response["unixtime"] = 0
+utc_offset = response["utc_offset"]
+ok = +1
 
 function refresh(){
    counter = counter + 1
@@ -29,9 +41,10 @@ function refresh(){
 
 function showDate() {
     if(isConnected == true){
-        var unix = response["unixtime"] + counter
+        unix =  response["unixtime"]*(60*ok)
+        unix = response["unixtime"] + counter
         var milliseconds = unix * 1000
-        var date = new Date(milliseconds)
+        date = new Date(milliseconds)
     }
     else{
         var date = new Date()
@@ -57,6 +70,7 @@ australia = ["Adelaide", "Brisbane", "Broken_Hill", "Darwin", "Eucla", "Hobart",
 europe = ["Amsterdam", "Andorra", "Astrakhan", "Athens", "Belgrade", "Berlin", "Brussels", "Bucharest", "Budapest", "Chisinau", "Copenhagen", "Dublin", "Gibraltar", "Helsinki", "Istanbul", "Kaliningrad", "Kiev", "Kirov", "Lisbon", "London", "Luxembourg", "Madrid", "Malta", "Minsk", "Monaco", "Moscow", "Oslo", "Paris", "Prague", "Riga", "Rome", "Samara", "Saratov", "Simferopol", "Sofia", "Stockholm", "Tallinn", "Tirane", "Ulyanovsk", "Uzhgorod", "Vienna", "Vilnius", "Volgograd", "Warsaw", "Zaporozhye", "Zurich"]
 india = ["Chagos", "Christmas", "Cocos", "Kerguelen", "Mahe", "Maldives", "Mauritius", "Reunion"]
 pacific = ["Apia", "Auckland", "Bougainville", "Chatham", "Chuuk", "Easter", "Efate", "Enderbury", "Fakaofo", "Fiji", "Funafuti", "Galapagos", "Gambier", "Guadalcanal", "Guam", "Honolulu", "Kiritimati", "Kosrae", "Kwajalein", "Majuro", "Marquesas", "Nauru", "Niue", "Norfolk", "Noumea", "Pago_Pago", "Palau", "Pitcairn", "Pohnpei", "Port_Moresby", "Rarotonga", "Tahiti", "Tarawa", "Tongatapu", "Wake", "Wallis"]
+gmt = ["GMT-14", "GMT-13", "GMT-12", "GMT-11", "GMT-10", "GMT-9", "GMT-8", "GMT-7", "GMT-6", "GMT-5", "GMT-4", "GMT-3", "GMT-2", "GMT-1", "GMT", "GMT+1", "GMT+2", "GMT+3", "GMT+4", "GMT+5", "GMT+6", "GMT+7", "GMT+8", "GMT+9", "GMT+10", "GMT+11", "GMT+12"]
 
 function loadCountries() {
     select = document.getElementById("timezones")
@@ -69,7 +83,11 @@ function loadCountries() {
             for(let i = 0; i < europe.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = africa[i]
-                newTime.textContent = africa[i]
+                var text = africa[i]
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
                 select.appendChild(newTime)
             }
         }
@@ -77,7 +95,14 @@ function loadCountries() {
             for(let i = 0; i < america.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = america[i]
-                newTime.textContent = america[i]
+                var text = america[i]
+                if(text.includes("Argentina") || text.includes("Indiana") || text.includes("Kentucky") || text.includes("North Dakota")){
+                    text = text.replace("/", " - ")
+                }
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
                 select.appendChild(newTime)
             }
         }
@@ -85,7 +110,11 @@ function loadCountries() {
             for(let i = 0; i < asia.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = asia[i]
-                newTime.textContent = asia[i]
+                var text = asia[i]
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
                 select.appendChild(newTime)
             }
         }
@@ -93,7 +122,11 @@ function loadCountries() {
             for(let i = 0; i < atlantic.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = atlantic[i]
-                newTime.textContent = atlantic[i]
+                var text = atlantic[i]
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
                 select.appendChild(newTime)
             }
         }
@@ -101,7 +134,11 @@ function loadCountries() {
             for(let i = 0; i < australia.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = australia[i]
-                newTime.textContent = australia[i]
+                var text = australia[i]
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
                 select.appendChild(newTime)
             }
         }
@@ -109,7 +146,14 @@ function loadCountries() {
             for(let i = 0; i < europe.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = europe[i]
-                newTime.textContent = europe[i]
+                var text = europe[i]
+                if(text.includes("Argentina") || text.includes("Indiana") || text.includes("Kentucky") || text.includes("North Dakota")){
+                    text = text.replace("/", " - ")
+                }
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
                 select.appendChild(newTime)
             }
         }
@@ -117,7 +161,14 @@ function loadCountries() {
             for(let i = 0; i < india.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = india[i]
-                newTime.textContent = india[i]
+                var text = india[i]
+                if(text.includes("Argentina") || text.includes("Indiana") || text.includes("Kentucky") || text.includes("North Dakota")){
+                    text = text.replace("/", " - ")
+                }
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
                 select.appendChild(newTime)
             }
         }
@@ -125,11 +176,28 @@ function loadCountries() {
             for(let i = 0; i < pacific.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = pacific[i]
-                newTime.textContent = pacific[i]
+                var text = pacific[i]
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
+                select.appendChild(newTime)
+            }
+        }
+        else if(value == "GMT"){
+            for(let i = 0; i < pacific.length; i++){
+                newTime = document.createElement("option")
+                newTime.value = gmt[i]
+                var text = gmt[i]
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                text = text.replace("_", " ")
+                newTime.textContent = text
                 select.appendChild(newTime)
             }
         }
     }
     else{
+        window.location = window.location.pathname + "?" + zone + "/" + value
     }
 }

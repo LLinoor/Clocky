@@ -1,20 +1,28 @@
 var currentZone = window.location.search.substr(1)
-url =
-console.log(currentZone)
+externalTimezone = false
 
 const Http = new XMLHttpRequest()
 if (currentZone == ""){
     url = "http://worldtimeapi.org/api/ip.json"
-    console.log("ok")
+}
+else if(currentZone.includes("GMT")){
+    if(currentZone.includes("+")){
+        currentZone = currentZone.replace("+", "-")
+    }
+    else if(currentZone.includes("-")){
+        currentZone = currentZone.replace("-", "+")
+    }
+    url = "http://worldtimeapi.org/api/timezone/" + currentZone
+    externalTimezone = true
 }
 else {
     url = "http://worldtimeapi.org/api/timezone/" + currentZone
-    console.log(url)
+    externalTimezone = true
 }
 Http.open("GET", url)
 Http.send()
 
-response =
+response = 0
 isConnected = false
 
 Http.onreadystatechange=function(){
@@ -40,7 +48,12 @@ function refresh(){
 }  
 
 function showDate() {
-    if(isConnected == true){
+    if(isConnected == true && externalTimezone == true){
+        x = response["datetime"].slice(0, -6)
+        date = new Date(x)
+        date.setSeconds(date.getSeconds() + counter)
+    }
+    else if(isConnected == true){
         unix =  response["unixtime"]*(60*ok)
         unix = response["unixtime"] + counter
         var milliseconds = unix * 1000
@@ -79,6 +92,9 @@ function loadCountries() {
         countrySelected = true
         zone = value
         select.innerHTML = ""
+        newTime = document.createElement("option")
+        newTime.textContent = "Choose :"
+        select.appendChild(newTime)
         if(value == "Africa"){
             for(let i = 0; i < europe.length; i++){
                 newTime = document.createElement("option")
@@ -184,7 +200,7 @@ function loadCountries() {
                 select.appendChild(newTime)
             }
         }
-        else if(value == "GMT"){
+        else if(value == "ETC"){
             for(let i = 0; i < pacific.length; i++){
                 newTime = document.createElement("option")
                 newTime.value = gmt[i]

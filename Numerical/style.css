@@ -48,6 +48,11 @@ header{
 a{
     text-decoration: none;
 }
+#timezones{
+    position: absolute;
+    top: 25px;
+    left: 2%;
+}
 @media (prefers-color-scheme: dark){
 span
 {
@@ -65,8 +70,14 @@ a{
     color: white;
 }
 }
-@media (max-width: 750px){
+@media (max-width: 550px){
     .info{
         visibility: hidden;
+    }
+    #timezones{
+        position: absolute;
+        top: initial;
+        left: initial;
+        bottom: 25px;
     }
 }

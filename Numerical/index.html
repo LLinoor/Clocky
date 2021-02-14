@@ -11,19 +11,20 @@
       <body onload=showDate();>
          <header>
             <p class="header"><a href="../Settings/index.html" class=link rel="noreferrer">Settings</a> - <a href="../Stopwatch/index.html" rel="noreferrer">Stopwatch</a></p>
-         </header>
-         <select name="timezones" id="timezones" onchange=loadCountries();>
-            <option value="">Change timezone</option>
-            <option value="Africa">Africa</option>
-            <option value="America">America</option>
-            <option value="Asia">Asia</option>
-            <option value="Atlantic">Atlantic</option>
-            <option value="Australia">Australia</option>
-            <option value="GMT">GMT</option>
-            <option value="Europe">Europe</option>
-            <option value="India">India</option>
-            <option value="Pacific">Pacific</option>
-        </select>
+            </header>
+            <select name="timezones" id="timezones" onchange=loadCountries();>
+               <option value="">Change timezone</option>
+               <option value="Africa">Africa</option>
+               <option value="America">America</option>
+               <option value="Asia">Asia</option>
+               <option value="Atlantic">Atlantic</option>
+               <option value="Australia">Australia</option>
+               <option value="ETC">GMT</option>
+               <option value="Europe">Europe</option>
+               <option value="India">India</option>
+               <option value="Pacific">Pacific</option>
+         </select>
+      
          <span id='horloge'></span>
          <p id="info" class="info">Waiting for a satellite connection...</p>
       </body>

@@ -3,7 +3,7 @@ externalTimezone = false
 
 const Http = new XMLHttpRequest()
 if (currentZone == ""){
-    url = "http://worldtimeapi.org/api/ip.json"
+    url = "https://worldtimeapi.org/api/ip.json"
 }
 else if(currentZone.includes("GMT")){
     if(currentZone.includes("+")){
@@ -12,11 +12,11 @@ else if(currentZone.includes("GMT")){
     else if(currentZone.includes("-")){
         currentZone = currentZone.replace("-", "+")
     }
-    url = "http://worldtimeapi.org/api/timezone/" + currentZone
+    url = "https://worldtimeapi.org/api/timezone/" + currentZone
     externalTimezone = true
 }
 else {
-    url = "http://worldtimeapi.org/api/timezone/" + currentZone
+    url = "https://worldtimeapi.org/api/timezone/" + currentZone
     externalTimezone = true
 }
 Http.open("GET", url)

@@ -48,10 +48,14 @@ header{
 a{
     text-decoration: none;
 }
-#timezones{
+#github{
+    text-align: center;
     position: absolute;
-    top: 25px;
-    left: 2%;
+    bottom: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 @media (prefers-color-scheme: dark){
 span
@@ -73,11 +77,5 @@ a{
 @media (max-width: 550px){
     .info{
         visibility: hidden;
-    }
-    #timezones{
-        position: absolute;
-        top: initial;
-        left: initial;
-        bottom: 25px;
     }
 }

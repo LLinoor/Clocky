@@ -3,6 +3,8 @@ span
     color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 40px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 body
 {

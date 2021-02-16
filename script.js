@@ -3,7 +3,7 @@ externalTimezone = false
 multiplesClock = false
 counter = 0
 
-function getTime(currentZone){
+async function getTime(currentZone){
     Http = new XMLHttpRequest()
     if (currentZone == ""){
         url = "https://worldtimeapi.org/api/ip.json"
@@ -25,12 +25,17 @@ function getTime(currentZone){
     Http.open("GET", url)
     Http.send()
 
-    response = 0
-    isConnected = false
+    setTimeout(() => {
+        return Http
+    }, 500);
+}
 
-    Http.onreadystatechange=function(){
+isConnected = false
+
+async function setTime(currentZone){
+    await getTime(currentZone)
+    Http.onreadystatechange= function(){
     if(this.readyState==4 && this.status==200){
-        console.log(Http.responseURL)  
         const json = Http.responseText
         response = JSON.parse(json)
         document.getElementById('info').innerHTML = 'Connected to <a href="http://worldtimeapi.org/" rel="noreferrer">satellite</a> (~1sec) 🛰️'
@@ -39,7 +44,11 @@ function getTime(currentZone){
     else if(this.status!=200 || this.readyState==0){
         document.getElementById('info').innerHTML = 'Unable to get the satellite time, switch to local time. ❌'
     }
+    return response
     }
+    setTimeout(() => {
+        return response
+    }, 500);
 }
 
 function createClock(id){
@@ -52,12 +61,15 @@ function createClock(id){
 if(currentZone.includes("&")){
     multiplesClock = true
     timezones = currentZone.split("&")
-    for(i = 0; i < timezones.length; i++){
-        createClock(timezones[i])
-        getTime(timezones[i])
-        clock.textContent = response["datetime"]
+        for (i = 0; i < timezones.length; i++){
+            createClock(timezones[i])
+            setTime(timezones[i]).then(function(value) {console.log(value)})
+            console.log(response)
+            clock.textContent = response["datetime"]
     }
 }
+
+
 if(multiplesClock == false){
     getTime(currentZone)
     createClock("ok")

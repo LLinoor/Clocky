@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width">
+      <!-- <link rel="icon" type="image/x-icon" href="../resources/logo.ico"/> -->
+      <title>Clocky - Numerical</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="style.css">
+   </head>
+      <body onload=showDate();>
+         <header>
+            <p class="header"><a href="../Settings/index.html" class=link rel="noreferrer">Settings</a> - <a href="../Stopwatch/index.html" rel="noreferrer">Stopwatch</a></p>
+         </header>
+            <span class="dot" id="change">
+               <a href="#"><img class="svg" src="resources/change.svg" alt="change timezone"></a>
+            </span>
+            <span class="dot" id="add">
+               <a href="#"><img class="svg" src="resources/add.svg" alt="add timezone"></a>
+            </span>
+            <select name="timezones" id="timezones" onchange=loadCountries();>
+               <option value="">Change timezone</option>
+               <option value="Africa">Africa</option>
+               <option value="America">America</option>
+               <option value="Asia">Asia</option>
+               <option value="Atlantic">Atlantic</option>
+               <option value="Australia">Australia</option>
+               <option value="ETC">GMT</option>
+               <option value="Europe">Europe</option>
+               <option value="India">India</option>
+               <option value="Pacific">Pacific</option>
+         </select>
+      
+         <span class="horloge" id='horloge'></span>
+         <p id="info" class="info">Waiting for a satellite connection...</p>
+      </body>
+      <script src="script.js"></script>
+</html>

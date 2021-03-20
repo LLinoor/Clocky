@@ -38,17 +38,15 @@ async function setTime(currentZone){
     if(this.readyState==4 && this.status==200){
         const json = Http.responseText
         response = JSON.parse(json)
+        console.log(response)
         document.getElementById('info').innerHTML = 'Connected to <a href="http://worldtimeapi.org/" rel="noreferrer">satellite</a> (~1sec) 🛰️'
         isConnected = true
+        return response
     }
     else if(this.status!=200 || this.readyState==0){
         document.getElementById('info').innerHTML = 'Unable to get the satellite time, switch to local time. ❌'
     }
-    return response
     }
-    setTimeout(() => {
-        return response
-    }, 500);
 }
 
 function createClock(id){
@@ -63,7 +61,7 @@ if(currentZone.includes("&")){
     timezones = currentZone.split("&")
         for (i = 0; i < timezones.length; i++){
             createClock(timezones[i])
-            setTime(timezones[i]).then(function(value) {console.log(value)})
+            response = setTime(timezones[i]).then(function(value) {console.log(value)})
             console.log(response)
             clock.textContent = response["datetime"]
     }

@@ -79,7 +79,7 @@ a{
     transition: right 0.5s;
 }
 #add:hover{
-    right: 9%;
+    right: 8%;
     visibility: visible;
 }
 @media (prefers-color-scheme: dark){

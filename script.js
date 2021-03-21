@@ -59,9 +59,11 @@ function createClock(id){
 if(currentZone.includes("&")){
     multiplesClock = true
     timezones = currentZone.split("&")
+    clockage = []
         for (i = 0; i < timezones.length; i++){
             createClock(timezones[i])
             response = setTime(timezones[i]).then(function(value) {console.log(value)})
+            clockage.push(response)
             console.log(response)
             clock.textContent = response["datetime"]
     }

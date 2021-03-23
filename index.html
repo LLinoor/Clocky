@@ -8,7 +8,7 @@
       <meta charset="UTF-8">
       <link rel="stylesheet" href="style.css">
    </head>
-      <body onload=showDate();>
+      <body>
          <header>
             <select name="timezones" id="timezones" onchange=loadCountries();>
                <option value="">Change timezone</option>
@@ -27,5 +27,6 @@
          <p id="info" class="info">Waiting for a satellite connection...</p>
          <p id="github"><a href="https://github.com/LLinoor/Clocky/tree/beta/" target="_blank">GitHub</p>
       </body>
+      <script src="loadCountries.js"></script>
       <script src="script.js"></script>
 </html>

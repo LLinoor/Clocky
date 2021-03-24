@@ -1,3 +1,4 @@
+var t0 = performance.now();
 var currentZone = window.location.search.substr(1)
 externalTimezone = false
 multiplesClock = false
@@ -62,7 +63,7 @@ function createClock(id){
     clockContainer.appendChild(clock)
     clockContainer.appendChild(info)
     document.body.appendChild(clockContainer)
-    return clock
+    return clockContainer
 }
 
 if(currentZone.includes("&")){
@@ -73,11 +74,11 @@ if(currentZone.includes("&")){
     allClock = []
         for (i = 0; i < timezones.length; i++){
             getClock = createClock(timezones[i])
-            info.textContent = timezones[i]
             allClock.push(getClock)
             http[i] = new XMLHttpRequest()
             getTime(timezones[i], http[i], function(response){
                 clockage.push(response)
+                showDate()
             })
             isConnected = true
             document.getElementById('info').innerHTML = 'Connected to <a href="http://worldtimeapi.org/" rel="noreferrer">satellite</a> (~1sec) 🛰️'
@@ -109,7 +110,10 @@ function showDate() {
         for(i=0; i < allClock.length; i++){
             response = clockage[i]
             response = JSON.parse(response)
+            allClock[i].childNodes[1].textContent = response["timezone"]
             x = response["datetime"].slice(0, -6)
+            t1 = performance.now();
+            console.log(t1)
             date = new Date(x)
             date.setSeconds(date.getSeconds() + counter)
             var h = date.getHours();
@@ -119,7 +123,7 @@ function showDate() {
             if( m < 10 ){ m = '0' + m; }
             if( s < 10 ){ s = '0' + s; }
             var time = h + ':' + m + ':' + s
-            allClock[i].textContent = time
+            allClock[i].childNodes[0].textContent = time
         }
     }
     else if(isConnected == true && multiplesClock == false){

@@ -21,6 +21,7 @@ function failedConnection(){
 getTime = function(currentZone, Http, callback){
     if (currentZone == ""){
         url = "https://worldtimeapi.org/api/ip.json"
+        externalTimezone = false
     }
     else if(currentZone.includes("GMT")){
         if(currentZone.includes("+")){
@@ -39,10 +40,7 @@ getTime = function(currentZone, Http, callback){
     Http.open("GET", url)
     Http.onreadystatechange = function(){
         if(Http.readyState == 4 && Http.status == 200){
-            if(multiplesClock == true){
-                callback(Http.response)
-            }
-            successConnection(Http.response)
+            callback(Http.response)
             return
         }
         else if(Http.readyState == 4 && Http.status > 299){
@@ -56,10 +54,14 @@ getTime = function(currentZone, Http, callback){
 isConnected = false
 
 function createClock(id){
+    clockContainer = document.createElement("div")
+    info = document.createElement("p")
     clock = document.createElement("span")
     clock.className = "horloge"
     clock.id = id
-    document.body.appendChild(clock)
+    clockContainer.appendChild(clock)
+    clockContainer.appendChild(info)
+    document.body.appendChild(clockContainer)
     return clock
 }
 
@@ -71,6 +73,7 @@ if(currentZone.includes("&")){
     allClock = []
         for (i = 0; i < timezones.length; i++){
             getClock = createClock(timezones[i])
+            info.textContent = timezones[i]
             allClock.push(getClock)
             http[i] = new XMLHttpRequest()
             getTime(timezones[i], http[i], function(response){
@@ -86,6 +89,12 @@ if(multiplesClock == false){
     createClock("ok")
     getTime(currentZone, http, function(response){
         successConnection(response)
+        if(externalTimezone == true){   
+            info.textContent = currentZone
+        }
+        else{
+            info.textContent = "Local Time"
+        }
     })
 }
 
